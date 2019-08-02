@@ -22,7 +22,6 @@ Vue.use(Vuex)
 Vue.prototype.$store = store
 
 router.beforeEach((to, from, next) => {
-    console.log(store.state, "store.state")
     if (store.state.userInfo || to.path === "/login") {
         next()
     } else {

@@ -70,9 +70,7 @@ export default {
         ...mapState(["userStatus", "vipLevel"]),
         ...mapGetters(["memberInfo"])
     },
-    mounted() {
-        console.log(this.userStatus, this.vipLevel, "---->");
-    },
+    mounted() {},
     methods: {
         recharge() {
             this.$router.push("./userCenter");
@@ -85,7 +83,7 @@ export default {
                 }
             });
         },
-        checkPermission(p) {}
+        checkPermission() {}
     }
 };
 </script>

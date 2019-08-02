@@ -10,7 +10,7 @@
                 v-model="form.account"
                 placeholder-class="input-holder"
                 placeholder="请输入您的账号"
-            >
+            />
         </div>
         <div class="section">
             <input
@@ -19,7 +19,7 @@
                 v-model="form.password"
                 placeholder-class="input-holder"
                 placeholder="请输入您的密码"
-            >
+            />
         </div>
         <button class="btn" @click="login">登录</button>
 
@@ -50,8 +50,8 @@ export default {
         ckeckLogin() {},
         login() {
             if (!this.form.account && !this.form.password) {
-                return false;
                 alert("请填写账号密码");
+                return false;
             }
             const that = this;
             setTimeout(() => {
