@@ -12,16 +12,7 @@
 export default {
     name: "app",
     components: {},
-    computed: {
-        count() {
-            return this.$store.state.count;
-        }
-    },
-    methods: {
-        countIncrease() {
-            this.$store.commit("countIncrease", 100);
-        }
-    }
+    
 };
 </script>
 

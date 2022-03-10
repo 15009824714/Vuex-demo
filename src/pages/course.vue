@@ -25,15 +25,15 @@ export default {
     },
     methods: {
         share() {
-            let vm = this;
-            let r = confirm("课程地址：http://www.baidu.com, 感谢分享！");
-            if (r == true) {
-                console.log("ok");
-                store.dispatch("getFreeVip", { v: "vip", vm }).then(() => {
-                    alert("分享成功");
+            // 简单分享
+            let c = confirm("课程分享，地址： http://www.muke.com");
+            if (c) {
+                // 修改state userStatus
+                store.dispatch("getFreeVip").then(res => {
+                    alert(res);
                 });
             } else {
-                console.log("Cancel");
+                console.log("取消");
             }
         }
     }

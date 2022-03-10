@@ -76,14 +76,31 @@ export default {
             this.$router.push("./userCenter");
         },
         goVideoList(e) {
-            this.$router.push({
-                name: "course",
-                params: {
-                    id: e.id
-                }
-            });
+            const res = this.checkPermission(e);
+            if (res) {
+                this.$router.push({
+                    name: "course",
+                    params: {
+                        id: e.id
+                    }
+                });
+            } else {
+                alert("权限不足，无法观看");
+            }
         },
-        checkPermission() {}
+        checkPermission(e) {
+            const userStatus = this.$store.state.userStatus;
+            const vipLevel = this.$store.state.vipLevel;
+            if (userStatus >= e.userStatus) {
+                if (vipLevel >= e.vipLevel) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
     }
 };
 </script>
